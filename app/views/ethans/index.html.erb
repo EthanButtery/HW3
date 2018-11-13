@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ethans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Login</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ethans.each do |ethan| %>
+      <tr>
+        <td><%= ethan.login %></td>
+        <td><%= link_to 'Show', ethan %></td>
+        <td><%= link_to 'Edit', edit_ethan_path(ethan) %></td>
+        <td><%= link_to 'Destroy', ethan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ethan', new_ethan_path %>
